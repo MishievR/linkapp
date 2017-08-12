@@ -1,0 +1,70 @@
+<% obj.each do |listing| %>
+      <!-- <div class="well well-sm"> -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="well">
+            <div class="row">
+              <div class="col-sm-12 col-md-5 col-lg-5">
+                <div class="listing-title">
+                  <%= link_to listing.title, listing_path(listing), class: "listing-title-text" %>
+                  <!-- <span class="badge badge-text badge-green"><strong>$<%= listing.price %></strong> <%= listing.price_time%></span> -->
+                  <h4 class="listing-tag-line"><%= listing.tag_line %></h4>
+                  <p><%= render listing.categories %></p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-7 col-lg-7">
+                <% if listing.twitter_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://twitter.com/#{listing.twitter_url}", class: "fa fa-twitter fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.facebook_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://facebook.com/#{listing.facebook_url}", class: "fa fa-facebook fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.linkedin_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://linkedin.com/in/#{listing.linkedin_url}", class: "fa fa-linkedin fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.instagram_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://instagram.com/#{listing.instagram_url}", class: "fa fa-instagram fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.snapchat_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://snapchat.com/add/#{listing.snapchat_url}", class: "fa fa-snapchat fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.youtube_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://youtube.com/user/#{listing.youtube_url}", class: "fa fa-youtube fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.angellist_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://angel.co/#{listing.angellist_url}", class: "fa fa-angellist fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.medium_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://medium.com/#{listing.medium_url}", class: "fa fa-medium fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.producthunt_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://producthunt.com/#{listing.producthunt_url}", class: "fa fa-producthunt fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.reddit_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://reddit.com/#{listing.reddit_url}", class: "fa fa-reddit fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+                <% if listing.twitch_url != "" %>
+                    <i class="icons-paddings"><%= link_to "", "https://twitch.com/#{listing.twitch_url}", class: "fa fa-twitch fa-2x",  :target => '_blank' %></span>
+                  <% end %></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+          <!-- <div class="col-md-12">
+                  <div class="listing-meta-details">
+
+                  <small> Overlinked by <%= image_tag listing.user.avatar.url(:thumb), class: "profilePhotoThumbIcon" if listing.user.avatar? %>
+                      <%= link_to listing.user.name, user_path(listing.user) %>
+                                      <%= time_ago_in_words(listing.created_at) %> ago  |
+                                      last updated: <%= time_ago_in_words(listing.updated_at) %> </small>
+
+                  </div>
+                </div> -->
+
+    <!-- </div> -->
+<% end %>

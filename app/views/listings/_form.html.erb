@@ -1,0 +1,186 @@
+<%= render 'shared/errors', obj: @listing %>
+<div class="container-fluid">
+
+  <!-- <div class="panel panel-default">
+    <div class="panel-body"> -->
+
+  <div class="row">
+<%= form_for(@listing, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+
+
+
+
+
+
+    <div class="col-xs-12  col-md-8">
+      <div class="form-container-listing">
+
+        <div class="well well-white">
+
+
+
+        <div class="form-group">
+
+<div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-3 col-lg-3">
+          <%= f.label :upload_profile_photo %>
+          <%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+        </div>
+
+
+          <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-6 col-lg-6">
+
+              <%= f.label :full_name %>
+              <%= f.text_field :title, class: "form-control", placeholder: "John Doe", autofocus: true %>
+            </div>
+
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-6 col-lg-6">
+                <%= f.label :Short_description_160_characters_max %>
+                <%= f.text_field :tag_line, class: "form-control", placeholder: "Great but pretty average man.", autofocus: false %>
+              </div>
+          </div>
+        </div>
+
+
+
+        <div class="well well-white">
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :Twitter %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.twitter.com/</span>
+                  <%= f.text_area :twitter_url, rows: 1, class: "form-control", placeholder: "overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :Facebook %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.facebook.com/</span>
+                  <%= f.text_area :facebook_url, rows: 1, class: "form-control", placeholder: "overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :Linkedin %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.linkedin.com/in/</span>
+                  <%= f.text_area :linkedin_url, rows: 1, class: "form-control", placeholder: "overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :Instagram %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.instagram.com/</span>
+                  <%= f.text_area :instagram_url, rows: 1, class: "form-control", placeholder: "overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :Snapchat %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.snapchat.com/add/</span>
+                  <%= f.text_area :snapchat_url, rows: 1, class: "form-control", placeholder: "overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :YouTube %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.youtube.com/user/</span>
+                  <%= f.text_area :youtube_url, rows: 1, class: "form-control", placeholder: "overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :AngelList %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.angel.co/</span>
+                  <%= f.text_area :angellist_url, rows: 1, class: "form-control", placeholder: "overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :Medium %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.medium.com/</span>
+                  <%= f.text_area :medium_url, rows: 1, class: "form-control", placeholder: "@overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :ProductHunt %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.producthunt.com/</span>
+                  <%= f.text_area :producthunt_url, rows: 1, class: "form-control", placeholder: "@overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :Reddit %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.reddit.com/user/</span>
+                  <%= f.text_area :reddit_url, rows: 1, class: "form-control", placeholder: "overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :Twitch %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://www.twitch.tv/</span>
+                  <%= f.text_area :twitch_url, rows: 1, class: "form-control", placeholder: "overlink", autofocus: false %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="well well-white">
+          <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <%= f.label :About %>
+              <%= f.text_area :description, rows: 3, class: "form-control", placeholder: "Some words about this person to help other people discover more", autofocus: false %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+              <div class="btn-submit-listing">
+              <%= f.submit class: 'btn btn-primary btn-lg btn-long'%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+      <div class="col-xs-12 col-md-3">
+  <div class="well well-white">
+        <div class="title-category"><h4>Add this person to the categories:</br>
+          <small>One or many</small></h4></div>
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+              <ul>
+            <%= cb.label(class: "list-group-item list-group-item-on-bg checkbox-inline input_checkbox itme-list") {cb.check_box(class: "list-group-item checkbox ") + cb.text}  %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+
+
+    </div>
+  <!-- </div>
+    </div> -->
+
+  </div>
+<% end %>

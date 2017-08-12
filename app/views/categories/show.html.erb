@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Planetome | Show Listings</title>
+  </head>
+<h1 class="on-black" align="center"><%= "List of all persons in " + @category.name %></h1>
+<h1 align="center"><small><%= @category.description %></small></h1>
+<div align="center">
+  <% if user_signed_in? and current_user.admin? %>
+    <div class="row">
+      <span class="badge edit-category-badge"><%= link_to "Edit Category Info", edit_category_path(@category), class: "edit-category" %></span>
+    </div>
+  <% end %>
+  <%= will_paginate @category_listings %>
+    </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <%= render 'listings/listing', obj: @category_listings %>
+          </div>
+        </div>
+      </div>
+    <div align="center">
+  <%= will_paginate @category_listings %>
+</div>
