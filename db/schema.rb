@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812112546) do
+ActiveRecord::Schema.define(version: 20170812210149) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "description"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "title"
+    t.string   "tag_line"
+    t.string   "group_image"
+    t.string   "group_background_image"
+    t.integer  "rank",                   default: 0, null: false
+    t.text     "description"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "interests", force: :cascade do |t|
