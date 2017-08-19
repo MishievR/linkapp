@@ -115,3 +115,12 @@ From listing form:
         </ul>
       <% end %>
     </div> -->
+
+
+From person/show
+<!-- <li class="list-group-item"><% if @person.interests.any? %>
+<p>Categories: <%= render @person.interests %></p>
+<% end %></li>
+<li class="list-group-item"><% if @person.categories.any? %>
+<p>Categories: <%= render @person.categories %></p>
+<% end %></li> -->

@@ -28,19 +28,19 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_listings = @user.listings.paginate(page: params[:page], per_page: 5)
+    @person_users = @user.people.paginate(page: params[:page], per_page: 5)
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
     flash[:danger] = "User and all listings created by user have been deleted"
-    redirect_to listings_path
+    redirect_to people_path
   end
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :avatar, :email, :age, :location_town, :about, :username, interest_ids: [])
+    params.require(:user).permit(:first_name, :last_name, :avatar, :email, :age, :location_town, :about, :username, person_ids: [], interest_ids: [])
   end
 
   def set_user

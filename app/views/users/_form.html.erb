@@ -54,11 +54,7 @@
 
                   <div class="title-category"><h4>Select your interests:</br>
                     <small>One or many</small></h4></div>
-                      <%= f.collection_check_boxes :interest_ids, Interest.all, :id, :name do |cb| %>
-                        <ul>
-                          <%= cb.label(class: "list-group-item list-group-item-on-bg checkbox-inline input_checkbox itme-list") {cb.check_box(class: "list-group-item checkbox ") + cb.text}  %>
-                        </ul>
-                      <% end %>
+
 
 
 </div>
@@ -84,7 +80,7 @@
         </div>
 
         <div class="col-xs-4 col-xs-offset-4">
-          [ <%= link_to 'Cancel request and return to listings', listings_path %> ]
+          [ <%= link_to 'Cancel request and return to listings', people_path %> ]
         </div>
       </div>
     </div>

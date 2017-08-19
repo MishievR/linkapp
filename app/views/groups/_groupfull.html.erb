@@ -1,0 +1,23 @@
+<% obj.each do |group| %>
+      <!-- <div class="well well-sm"> -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="well">
+            <div class="row">
+              <div class="col-sm-12 col-md-5 col-lg-5">
+                <div class="listing-title">
+                  <%= link_to group.title, group_path(group), class: "listing-title-text" %>
+                  <h4 class="listing-tag-line"><%= group.description %></h4>
+                  <h4 class="listing-tag-line"><%= group.person_ids.count %></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+<% end %>

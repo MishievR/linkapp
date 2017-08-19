@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OverLink | Persons</title>
+    <title>OverLink | People</title>
   </head>
-    <h1 class="on-black" align="center">List of all persons</h1>
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        <div class="well well-white">
+          <h1 align="center">List of all people</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 
     <!-- <ul class="nav nav-tabs nav-justified">
       <li role="presentation" class="active">
@@ -27,21 +43,15 @@
 
 
       <div align="center">
-        <%= will_paginate %>
-      </div>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-              <%= render 'listing', obj: @listings %>
-            </div>
-          </div>
         </div>
-      <div align="center">
-        <%= will_paginate %>
+          <%= will_paginate %>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                  <%= render 'person', obj: @people %>
+                </div>
+              </div>
+            </div>
+          <%= will_paginate %>
+        <div align="center">
       </div>
-
-
-
-
-
-<!-- <p> Go to:  <%= link_to 'New Listing', new_listing_path %> | <%= link_to 'Main', root_path %> </p> -->

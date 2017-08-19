@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OverLink | Show Person</title>
+  </head>
+  <body id="show-listing-body">
+    <div class="row ">
+      <div class="col-md-10 col-md-offset-1 ">
+        <div class="well well-white">
+          <ul class="listing">
+            <div class="row ">
+              <div class="col-sm-3 col-md-3 col-lg-3">
+                <li><%= image_tag @person.profile_image_url.url(:medium), class: "profilePhoto" if @person.profile_image_url? %></li>
+              </div>
+              <div class="col-sm-9 col-md-9 col-lg-9">
+                <li class="listing-title">
+                  <h1 class=""><strong><%= @person.title %></strong></h1>
+                  <% if @person.groups.any? %>
+                  <%= render @person.groups %>
+                  <% end %>
+                </li>
+                <li><small>On OverLink for: <%= time_ago_in_words(@person.created_at) %></small></li>
+                <li><h6><%= @person.tag_line %></h6></li>
+              </div>
+              </div><hr>
+
+              <div class="row ">
+                <div class="listing-actions">
+                <ul>
+                  <li class="list-group-item"><h3>About:</h3></li>
+                  <li class="list-group-item"><h5><%= @person.description %></h5></li>
+                </ul>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="listing-actions">
+              <ul>
+
+                <div class="col-sm-12 col-md-7 col-lg-7">
+                  <ul>
+                  <li class="list-group-item"><% if @person.twitter_url != "" %>
+                      <i class="icons-paddings"><%= link_to " Twitter", "https://twitter.com/#{@person.twitter_url}", class: "fa fa-twitter fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.facebook_url != "" %>
+                      <i class="icons-paddings"><%= link_to " Facebook", "https://facebook.com/#{@person.facebook_url}", class: "fa fa-facebook fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.linkedin_url != "" %>
+                      <i class="icons-paddings"><%= link_to " LinkedIn", "https://linkedin.com/in/#{@person.linkedin_url}", class: "fa fa-linkedin fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.instagram_url != "" %>
+                      <i class="icons-paddings"><%= link_to " Instagram", "https://instagram.com/#{@person.instagram_url}", class: "fa fa-instagram fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.snapchat_url != "" %>
+                      <i class="icons-paddings"><%= link_to " Snapchat", "https://snapchat.com/add/#{@person.snapchat_url}", class: "fa fa-snapchat fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.youtube_url != "" %>
+                      <i class="icons-paddings"><%= link_to " YouTube", "https://youtube.com/user/#{@person.youtube_url}", class: "fa fa-youtube fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.angellist_url != "" %>
+                      <i class="icons-paddings"><%= link_to " AngelList", "https://angel.co/#{@person.angellist_url}", class: "fa fa-angellist fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.medium_url != "" %>
+                      <i class="icons-paddings"><%= link_to " Medium", "https://medium.com/#{@person.medium_url}", class: "fa fa-medium fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.producthunt_url != "" %>
+                      <i class="icons-paddings"><%= link_to " ProductHunt", "https://producthunt.com/#{@person.producthunt_url}", class: "fa fa-producthunt fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.reddit_url != "" %>
+                      <i class="icons-paddings"><%= link_to " Reddit", "https://reddit.com/#{@person.reddit_url}", class: "fa fa-reddit fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  <li class="list-group-item"><% if @person.twitch_url != "" %>
+                      <i class="icons-paddings"><%= link_to " Twitch", "https://twitch.com/#{@person.twitch_url}", class: "fa fa-twitch fa-2x",  :target => '_blank' %></span>
+                    <% end %></i></li>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+          </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+      <div class="panel-body">
+
+      <h4><small>Added by:</small></h4>
+      <div class="listing-meta-details">
+      <small><%= image_tag @person.user.avatar.url(:thumb), class: "profilePhotoThumb" if @person.user.avatar? %>
+        <%= link_to @person.user.name, user_path(@person.user) %>
+                        <%= time_ago_in_words(@person.created_at) %> ago  |
+                        last updated: <%= time_ago_in_words(@person.updated_at) %> </small>
+      </div>
+
+
+      </div>
+      </div>
+
+      </div>
+      </div>
+
+
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="listing-actions">
+                  <% if user_signed_in? && (current_user == @person.user || current_user.admin?) %>
+                      <%= link_to 'Edit this person', edit_person_path(@person), class: "btn btn-xs btn-primary" %>
+                      <%= link_to 'Delete this person', person_path(@person), method: :delete,
+                                                          data: { confirm: "Are you sure you want to delete this person?"},
+                                                          class: "btn btn-xs btn-danger" %>
+                    <% end %>
+                    <%= link_to 'View all people', people_path, class: "btn btn-xs btn-success" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <!-- </div>
+    </div>
+  </div> -->
+</body>
+</html>

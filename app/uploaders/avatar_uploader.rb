@@ -4,6 +4,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
+
+
   # Choose what kind of storage to use for this uploader:
   # storage :file
   storage :fog
@@ -75,5 +77,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+
+  def fix_exif_rotation #this is my attempted solution
+  manipulate! do |img|
+    img.tap(&:auto_orient)
+  end
+end
+
+process :fix_exif_rotation
 
 end

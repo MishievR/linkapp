@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OverLink | Group</title>
+  </head>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="well well-white">
+        <h1 align="center"><%= "List of all People in " + @group.title %></h1>
+        <h1 align="center"><small><%= @group.description %></small></h1>
+        <hr>
+        <h4 align="center"><small>Group created by <%= link_to @group.user.name, user_path(@group.user), class: "listing-title-text" %></small></h4>
+        <% if user_signed_in? %>
+        <li id="nav-host"><span class="label label-info label-host"><%= link_to 'Add a Person', new_person_path, id: @group %></span></li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div align="center">
+  <% if user_signed_in? and current_user.admin? %>
+    <div class="row">
+      <span class="badge edit-category-badge"><%= link_to "Edit Group Info", edit_group_path(@group), class: "edit-category" %></span>
+    </div>
+  <% end %>
+  <%= will_paginate @person_groups %>
+    </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+            <%= render 'people/person', obj: @person_groups %>
+          </div>
+        </div>
+      </div>
+    <div align="center">
+  <%= will_paginate @person_groups %>
+</div>

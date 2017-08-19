@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812210149) do
+ActiveRecord::Schema.define(version: 20170814130114) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "description"
+  end
+
+  create_table "category_groups", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "group_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -28,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170812210149) do
     t.text     "description"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.integer  "user_id"
   end
 
   create_table "interests", force: :cascade do |t|
@@ -47,13 +55,13 @@ ActiveRecord::Schema.define(version: 20170812210149) do
     t.integer "interest_id"
   end
 
-  create_table "listings", force: :cascade do |t|
+  create_table "people", force: :cascade do |t|
     t.string   "title"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.text     "description"
     t.integer  "user_id"
     t.string   "listing_url"
@@ -66,7 +74,7 @@ ActiveRecord::Schema.define(version: 20170812210149) do
     t.datetime "end_date"
     t.integer  "accomodate"
     t.integer  "bedroom"
-    t.integer  "companions",      default: 1
+    t.integer  "companions",        default: 1
     t.string   "price_time"
     t.text     "tag_line"
     t.string   "twitter_url"
@@ -80,6 +88,21 @@ ActiveRecord::Schema.define(version: 20170812210149) do
     t.string   "producthunt_url"
     t.string   "reddit_url"
     t.string   "twitch_url"
+    t.string   "profile_image_url"
+  end
+
+  create_table "person_groups", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "person_users", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_interests", force: :cascade do |t|

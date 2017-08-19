@@ -12,10 +12,10 @@
           <% end %>
         </li><hr class="zero-margin">
         <li class="list-group-item ">
-          Interests:
+          Groups created:
           <div class="list-group-item-responsive ">
-          <% if @user.interests.any? %>
-          <%= render @user.interests %>
+          <% if @user.groups.any? %>
+          <%= render @user.groups %>
           <% end %>
         </div>
         </li>
@@ -38,8 +38,11 @@
           <%= link_to 'Edit this user',  edit_user_registration_path(@user), class: "btn btn-xs btn-primary" %>
           <% end %>
         </div>
+          <%= will_paginate @person_users %>
 
-        <%= render 'listings/listing', obj: @user.listings %>
+        <%= render 'people/person', obj: @user.people %>
+
+          <%= will_paginate @person_users %>
     </div>
   </div>
 </div>

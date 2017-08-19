@@ -5,8 +5,14 @@ $navbar-default-bg: #000e25;
 @import "bootstrap";
 @-webkit-keyframes focus-in-expand-fwd{0%{letter-spacing:-.5em;-webkit-transform:translateZ(-800px);transform:translateZ(-800px);-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes focus-in-expand-fwd{0%{letter-spacing:-.5em;-webkit-transform:translateZ(-800px);transform:translateZ(-800px);-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-filter:blur(0);filter:blur(0);opacity:1}}
 
+
+
 body {
-    color: #000e25;
+    background: #000e25; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(#011A3B, #000e25); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#011A3B, #000e25); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#011A3B, #000e25); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#011A3B, #000e25); /* Standard syntax */
     height: 100%;
     bottom: 0px;
 }
@@ -68,7 +74,9 @@ hr.zero-margin {
 // ======================================================
 // EDIT BOOTSTRAP NATIVE ELEMENTS   [START]
 // ======================================================
-
+.alert {
+  background-color: #fff;
+}
 .well-intro {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -126,7 +134,10 @@ hr.zero-margin {
 // ======================================================
 // EDIT BOOTSTRAP NATIVE ELEMENTS   [END]
 // ======================================================
+.h3-category:hover {
+  color: #000;
 
+}
 .on-black {
   color: #fff;
 }
@@ -135,6 +146,7 @@ hr.zero-margin {
   color: #D62121;
 }
 .list-group-item-on-bg {
+  margin-left: -40px;
   border: 1px;
   border-radius: 0px;
   box-shadow:  0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
@@ -379,9 +391,9 @@ hr.zero-margin {
 
 .icons-paddings {
   padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  // padding-right: 5px;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
 }
 
 .listing-title {
@@ -405,7 +417,12 @@ hr.zero-margin {
 }
 
 .well-hover:hover {
-  background-color: #000e25;
+  background: #000e25; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(#011A3B, #000e25); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#011A3B, #000e25); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#011A3B, #000e25); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#011A3B, #000e25); /* Standard syntax */
+  // background-color: #000e25;
 }
 
 .well-hover:hover > h4 {
@@ -465,7 +482,7 @@ footer p {
 
 
 .footer-bottom {
-    background-color: #000e25;
+    background-color: rgba(0,14,37,0.0);
     height: 100px;
     width: 100%;
     bottom: auto;
@@ -490,56 +507,6 @@ footer p {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .profilePhoto{
 	width: 150px;
 	margin: 0 auto;
@@ -548,7 +515,7 @@ footer p {
 	height: 150px;
 	border-radius: 75px;
 	cursor: pointer;
-  border: 3px solid #0a9fdf;
+  border: 3px solid #000e25;
   box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -560,7 +527,7 @@ footer p {
 	height: 50px;
 	border-radius: 25px;
 	cursor: pointer;
-  border: 1px solid #0a9fdf;
+  border: 1px solid #000e25;
   box-shadow:  0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -572,6 +539,6 @@ footer p {
 	height: 20px;
 	border-radius: 10px;
 	cursor: pointer;
-  border: 1px solid #0a9fdf;
+  border: 1px solid #000e25;
   box-shadow:  0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
 }

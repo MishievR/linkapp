@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   resources :categories
-  resources :listings
+  resources :people
   resources :interests
+  resources :groups
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'pages#index'
@@ -18,6 +19,6 @@ Rails.application.routes.draw do
   # post 'login', to: 'sessions#create'
   # delete 'logout', to: 'sessions#destroy'
 
-  get 'listings/type_select', to: 'listings#type_select'
+  get 'people/type_select', to: 'people#type_select'
 
 end
