@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    @people = Person.reorder("created_at DESC").page(params[:page]).per_page(5)
+    @people = Person.reorder("created_at DESC").page(params[:page]).per_page(25)
   end
 
   def new
@@ -31,20 +31,30 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-
     @person.destroy
     flash[:danger] = "Listing was successfully deleted"
     redirect_to people_path
   end
 
   def update
-
     if @person.update(person_params)
       flash[:success] = "Listing updated succcessfully"
       redirect_to person_path(@person)
     else
       render 'edit'
     end
+  end
+
+  def upvote
+    @person = Person.find(params[:id])
+    @person.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @person = Person.find(params[:id])
+    @person.downvote_by current_user
+    redirect_to :back
   end
 
   private

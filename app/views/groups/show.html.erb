@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OverLink | Group</title>
+    <title><%= @group.title %> | Overlink</title>
   </head>
 <div class="container-fluid">
   <div class="row">
@@ -12,7 +12,7 @@
         <hr>
         <h4 align="center"><small>Group created by <%= link_to @group.user.name, user_path(@group.user), class: "listing-title-text" %></small></h4>
         <% if user_signed_in? %>
-        <li id="nav-host"><span class="label label-info label-host"><%= link_to 'Add a Person', new_person_path, id: @group %></span></li>
+        <%= link_to 'Suggest a Person to this group', new_person_path, class:"btn btn-primary btn-sm" %>
         <% end %>
       </div>
     </div>

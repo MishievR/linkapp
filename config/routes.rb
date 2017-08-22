@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
   resources :categories
-  resources :people
+  resources :people do
+    member do
+      put "like",    to: "people#upvote"
+      put "dislike", to: "people#downvote"
+    end
+  end
   resources :interests
   resources :groups
 

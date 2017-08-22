@@ -1,4 +1,5 @@
 class Person < ActiveRecord::Base
+  acts_as_votable
   belongs_to :user
   # has_many :person_users
   # has_many :users, through: :person_users

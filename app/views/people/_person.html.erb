@@ -1,53 +1,66 @@
 <% obj.each do |person| %>
-      <!-- <div class="well well-sm"> -->
-      <div class="container-fluid">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="well well-white">
         <div class="row">
-          <div class="well">
-            <div class="row">
-              <div class="col-sm-12 col-md-6 col-lg-6">
-                <div class="listing-title">
-                  <%= image_tag person.profile_image_url.url(:small), class: "profilePhotoThumb" if person.profile_image_url? %>
-                  <%= link_to person.title, person_path(person), class: "listing-title-text" %>
-                  <h4><small><%= person.tag_line %></small></h4>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-6 col-lg-6">
-                <% if person.twitter_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://twitter.com/#{person.twitter_url}", class: "fa fa-twitter fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.facebook_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://facebook.com/#{person.facebook_url}", class: "fa fa-facebook fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.linkedin_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://linkedin.com/in/#{person.linkedin_url}", class: "fa fa-linkedin fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.instagram_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://instagram.com/#{person.instagram_url}", class: "fa fa-instagram fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.snapchat_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://snapchat.com/add/#{person.snapchat_url}", class: "fa fa-snapchat fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.youtube_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://youtube.com/user/#{person.youtube_url}", class: "fa fa-youtube fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.angellist_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://angel.co/#{person.angellist_url}", class: "fa fa-angellist fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.medium_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://medium.com/#{person.medium_url}", class: "fa fa-medium fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.producthunt_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://producthunt.com/#{person.producthunt_url}", class: "fa fa-producthunt fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.reddit_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://reddit.com/#{person.reddit_url}", class: "fa fa-reddit fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-                <% if person.twitch_url != "" %>
-                    <i class="icons-paddings"><%= link_to "", "https://twitch.com/#{person.twitch_url}", class: "fa fa-twitch fa-2x",  :target => '_blank' %></span>
-                  <% end %></i>
-              </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="listing-title">
+              <%= image_tag person.profile_image_url.url(:small), class: "profilePhotoThumb" if person.profile_image_url? %>
+              <%= link_to person.title, person_path(person), class: "listing-title-text" %>
+              <h4><small><%= person.tag_line %></small></h4>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <% if person.twitter_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://twitter.com/#{person.twitter_url}", class: "fa fa-twitter fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.facebook_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://facebook.com/#{person.facebook_url}", class: "fa fa-facebook fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.linkedin_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://linkedin.com/in/#{person.linkedin_url}", class: "fa fa-linkedin fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.instagram_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://instagram.com/#{person.instagram_url}", class: "fa fa-instagram fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.snapchat_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://snapchat.com/add/#{person.snapchat_url}", class: "fa fa-snapchat fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.youtube_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://youtube.com/user/#{person.youtube_url}", class: "fa fa-youtube fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.angellist_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://angel.co/#{person.angellist_url}", class: "fa fa-angellist fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.medium_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://medium.com/#{person.medium_url}", class: "fa fa-medium fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.producthunt_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://producthunt.com/#{person.producthunt_url}", class: "fa fa-producthunt fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.reddit_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://reddit.com/#{person.reddit_url}", class: "fa fa-reddit fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+            <% if person.twitch_url != "" %>
+                <i class="icons-paddings"><%= link_to "", "https://twitch.com/#{person.twitch_url}", class: "fa fa-twitch fa-2x",  :target => '_blank' %></span>
+              <% end %></i>
+          </div>
+        </div><hr>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="btn-group">
+              <%= link_to like_person_path(person), method: :put, class: "btn btn-default btn-sm" do %>
+              <span class="fa fa-caret-up">
+              <%= person.get_upvotes.size %>
+              <% end %>
+              <%= link_to dislike_person_path(person), method: :put, class: "btn btn-default btn-sm" do %>
+              <span class="fa fa-caret-down">
+              <%= person.get_downvotes.size %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 <% end %>
