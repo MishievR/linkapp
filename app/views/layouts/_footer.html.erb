@@ -1,42 +1,19 @@
-<!-- <div class="footer-bottom">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-10 col-sm-10 col-md-5 col-lg-5">
-				<div class="copyright">
-          <small>
-            Copyright &copy; 2017 | <a href="http://www.planetome.com">Planetome Inc.</a>
-            by Roman Mishiev.
-          </small>
-				</div>
-			</div> -->
-      <!-- <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-        <div class="footer-logo">
-        <%= link_to image_tag('footer_logo.svg'), root_path %>
-      </div>
-      </div> -->
-			<!-- <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-				<div class="design">
-
-				</div>
-			</div> -->
-		<!-- </div>
-	</div>
-</div> -->
-
-
 <footer id="myFooter">
 		<div class="container">
 				<div class="row">
-						<div class="col-sm-3 myCols">
+						<div class="col-sm-12 myCols">
 								<h5>Get started</h5>
 								<ul>
 										<li><%= link_to 'Home', root_path %></li>
+										<% if !user_signed_in? %>
 										<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+										<% end %>
 										<li><%= link_to 'Add a Person', new_person_path %></li>
 										<li><%= link_to 'Add a new group', new_group_path %></li>
 								</ul>
 						</div>
-						<div class="col-sm-3 myCols">
+
+						<!-- <div class="col-sm-3 myCols">
 								<h5>About us</h5>
 								<ul>
 										<li><a href="#">Company Information</a></li>
@@ -59,7 +36,7 @@
 										<li><a href="#">Terms of Use</a></li>
 										<li><a href="#">Privacy Policy</a></li>
 								</ul>
-						</div>
+						</div> -->
 				</div>
 		</div>
 		<div class="social-networks">
@@ -68,8 +45,8 @@
 				<a href="#" class="google"><i class="fa fa-google-plus"></i></a>
 		</div>
 		<div class="footer-copyright">
-				<p>  Copyright &copy; 2017 | <a href="http://www.planetome.com">Planetome Inc.</a>
-					by Roman Mishiev. </p>
+				<p>Copyright &copy; 2017 | <a href="http://www.planetome.com">Planetome Inc.</a>
+					by Roman Mishiev.</p>
 		</div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

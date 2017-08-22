@@ -4,14 +4,28 @@
     <title>Overlink Groups</title>
   </head>
 
-<h1 align="center">List All Groups</h1>
-<div class="container-fluid">
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div class="well well-white">
+          <h1 align="center">List All Groups</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<div class="container">
   <div class="row">
     <nav class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
       <ul class="list-group">
         <li class="list-group-item">
-          <h1 align="center">Popular categories
-          </h1>
+          <h2 align="center">Popular groups
+          </h2>
         </li>
         <li class="list-group-item">
           <span class="badge">257</span>
@@ -28,20 +42,17 @@
           <ul class="listing">
             <div class="container-fluid">
               <div class="row">
-                <% @groups.each do |group| %>
+                <% @groups.each do |category_groups| %>
                   <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                    <div class="well">
+                    <div class="well well-white">
                       <li class="article-title">
                           <h5>
-                          <%= link_to "#{group.title}", group_path(group) %>
+                          <%= link_to "#{category_groups.title}", group_path(category_groups) %>
                           </h5>
-                          <h4><small>
-                            <%= truncate(group.description, length: 100) %>
+                          <h4><hr>
+                          <small>
+                          <%= truncate(category_groups.description, length: 100) %>
                           </small></h4>
-                          <h4><small>
-                            <%= group.category_ids %>
-                          </small></h4>
-
                       </li>
                     </div>
                   </div>
