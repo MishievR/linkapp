@@ -1,9 +1,5 @@
 <%= render 'shared/errors', obj: @person %>
-<div class="container-fluid">
-
-  <!-- <div class="panel panel-default">
-    <div class="panel-body"> -->
-
+<div class="container">
   <div class="row">
     <%= form_for(@person, :html => {class: "form-horizontal", role: "form"}) do |f| %>
       <div class="col-xs-12  col-md-8">
@@ -137,10 +133,6 @@
           </div>
         </div>
       </div>
-
-
-
-
       <div class="col-xs-12 col-md-4">
         <div class="well well-white">
           <div class="title-category"><h4>Add this person to the groups you created:</br>
@@ -155,35 +147,17 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-    <div class="well well-white">
-      <div class="row">
-      <div class="form-group">
-        <div class=" col-sm-12 col-md-12 col-lg-12">
-          <div class="btn-submit-listing">
-          <%= f.submit class: 'btn btn-primary btn-lg btn-long'%>
+    <div class="col-xs-12 col-md-12">
+      <div class="well well-white">
+        <div class="form-group">
+          <div class=" col-sm-12  col-md-12 col-lg-12">
+            <div class="btn-submit-listing">
+            <%= f.submit class: 'btn btn-primary btn-lg btn-long'%>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- </div>
-    </div> -->
-
-  </div>
+</div>
 <% end %>
