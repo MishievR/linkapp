@@ -2,11 +2,12 @@ class Group < ApplicationRecord
   acts_as_votable
 
   belongs_to :user
-  
+
   has_many :person_groups
   has_many :people, through: :person_groups
   has_many :category_groups
   has_many :categories, through: :category_groups
+  has_many :comments
 
 
   validates :user_id, presence: true

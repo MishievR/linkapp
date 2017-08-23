@@ -5,6 +5,7 @@ class Person < ActiveRecord::Base
   # has_many :users, through: :person_users
   has_many :person_groups
   has_many :groups, through: :person_groups
+  has_many :comments
 
   # has_many :listing_categories
   # has_many :categories, through: :listing_categories

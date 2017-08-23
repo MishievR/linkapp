@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
 
+  resources :comments
   resources :categories
   resources :people do
     member do
       put "like",    to: "people#upvote"
       put "dislike", to: "people#downvote"
     end
+    resources :comments
   end
   resources :interests
-  resources :groups
+  resources :groups do
+    resources :comments
+  end
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'pages#index'

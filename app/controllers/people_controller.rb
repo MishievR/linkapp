@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:edit, :update, :show, :destroy]
   before_action :require_user, except: [:index, :show]
-  before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :require_same_user, only: [:destroy]
 
   def index
     @people = Person.reorder("created_at DESC").page(params[:page]).per_page(25)

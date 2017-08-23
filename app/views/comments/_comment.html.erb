@@ -1,0 +1,15 @@
+<%= div_for(comment) do %>
+	<div class="comments_wrapper clearfix">
+		<div class="pull-left">
+			<p class="lead"><%= comment.body %></p>
+      <p><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong> by <%= image_tag comment.user.avatar.url(:thumb), class: "profilePhotoThumbIcon" if comment.user.avatar? %>
+        <%= link_to comment.user.name, user_path(comment.user) %></small></p>
+		</div>
+		<div class="btn-group pull-right">
+			<% if comment.user == current_user -%>
+				<%= link_to 'Destroy', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+			<% end %>
+		</div>
+	</div>
+  <hr>
+<% end %>

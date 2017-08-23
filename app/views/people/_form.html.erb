@@ -133,31 +133,54 @@
           </div>
         </div>
       </div>
+
       <div class="col-xs-12 col-md-4">
         <div class="well well-white">
-          <div class="title-category"><h4>Add this person to the groups you created:</br>
-            <small>If you want to add person to the groups created by other users, you need to go to this group and press "Add a new person to this group"</small>
-            <br>
-            <small><%= link_to 'Add a new group', new_group_path %></small></h4></div>
-            <%= f.collection_check_boxes :group_ids, current_user.groups, :id, :title do |cb| %>
-              <ul>
-            <%= cb.label(class: "list-group-item list-group-item-on-bg checkbox-inline input_checkbox itme-list") {cb.check_box(class: "list-group-item checkbox ") + cb.text}  %>
-          </ul>
-        <% end %>
+          <% if user_signed_in?  %>
+            <div class="title-category"><h4>Add this person to the groups you created:</br>
+              <small>If you want to add person to the groups created by other users, you need to go to this group and press "Add a new person to this group"</small>
+              <br>
+              <small><%= link_to 'Add a new group', new_group_path %></small></h4></div>
+              <%= f.collection_check_boxes :group_ids, current_user.groups, :id, :title do |cb| %>
+                <ul>
+                  <%= cb.label(class: "list-group-item list-group-item-on-bg checkbox-inline input_checkbox itme-list") {cb.check_box(class: "list-group-item checkbox ") + cb.text}  %>
+                </ul>
+             <% end %>
+           <% end %>
+         </div>
+          <% if current_user != @person.user %>
+            <% if @person.groups.count == 0 %>
+            <% end %>
+            <% if @person.groups.count >= 1 %>
+              <div class="well well-white">
+                <div class="title-category"><h4>Person's groups:</br>
+                <small>If you want to deselect person from the group you created, do it here and in the field above.</small>
+                <br>
+                </h4></div>
+                <%= f.collection_check_boxes :group_ids, @person.groups, :id, :title do |cb| %>
+                <ul>
+                  <%= cb.label(class: "list-group-item list-group-item-on-bg checkbox-inline input_checkbox itme-list") {cb.check_box(class: "list-group-item checkbox ") + cb.text}  %>
+                </ul>
+                <% end %>
+                <% if @person.groups.count == 0 %>
+                  <h4><small>New person will get a groups after creating.</small></h4>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
       </div>
-    </div>
 
-    <div class="col-xs-12 col-md-12">
-      <div class="well well-white">
-        <div class="form-group">
-          <div class=" col-sm-12  col-md-12 col-lg-12">
-            <div class="btn-submit-listing">
-            <%= f.submit class: 'btn btn-primary btn-lg btn-long'%>
+      <div class="col-xs-12 col-md-12">
+        <div class="well well-white">
+          <div class="form-group">
+            <div class=" col-sm-12  col-md-12 col-lg-12">
+              <div class="btn-submit-listing">
+              <%= f.submit class: 'btn btn-primary btn-lg btn-long'%>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 <% end %>

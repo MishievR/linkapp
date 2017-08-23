@@ -43,7 +43,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:title, :description, category_ids: [])
+    params.require(:group).permit(:title, :description, category_ids: [], person_ids: [])
   end
 
   def set_person
