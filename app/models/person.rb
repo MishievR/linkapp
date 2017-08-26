@@ -19,4 +19,8 @@ class Person < ActiveRecord::Base
   validates :group_ids, presence: true
 
   mount_uploader :profile_image_url, AvatarUploader
+
+
+
+
 end

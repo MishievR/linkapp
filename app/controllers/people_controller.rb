@@ -4,7 +4,14 @@ class PeopleController < ApplicationController
   before_action :require_same_user, only: [:destroy]
 
   def index
-    @people = Person.reorder("created_at DESC").page(params[:page]).per_page(25)
+
+    if params[:search]
+      @people = Person.where(['title like ?', "%#{params[:search]}%"])
+    else
+      @people = Person.reorder("created_at DESC").page(params[:page]).per_page(25)
+    end
+    # @people = Person.search(params[:search])
+    # @people = Person.reorder("created_at DESC").page(params[:page]).per_page(25)
   end
 
   def new

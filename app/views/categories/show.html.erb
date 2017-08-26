@@ -12,7 +12,11 @@
       <div class="well well-white">
         <h1 align="center"><%= "List of all Groups in " + @category.name %></h1>
         <h1 align="center"><small><%= @category.description %></small></h1>
-
+        <% if user_signed_in? and current_user.admin? %>
+          <div class="row">
+            <span class="badge"><%= link_to "Edit Category Info", edit_category_path(@category), class: "edit-category" %></span>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -21,11 +25,7 @@
 
 
 <div align="center">
-  <% if user_signed_in? and current_user.admin? %>
-    <div class="row">
-      <span class="badge edit-category-badge"><%= link_to "Edit Category Info", edit_category_path(@category), class: "edit-category" %></span>
-    </div>
-  <% end %>
+
   <%= will_paginate @category_groups %>
     </div>
       <div class="container-fluid">

@@ -15,73 +15,38 @@
               </div>
               <div class="col-sm-9 col-md-9 col-lg-9">
                 <li class="listing-title">
-                  <h1 class=""><strong><%= @person.title %></strong></h1>
-                  <% if @person.groups.any? %>
-                  <%= render @person.groups %>
-                  <% end %>
+                  <h1 class="person-profile-title"><strong><%= @person.title %></strong></h1>
                 </li>
-                <li><small>On OverLink for: <%= time_ago_in_words(@person.created_at) %></small></li>
-                <li><h6><%= @person.tag_line %></h6></li>
+                <li><p><%= @person.tag_line %></p></li>
+<br>
+                <% if @person.groups.any? %>
+                <%= render @person.groups %>
+                <% end %>
+
+
               </div>
-              </div><hr>
+              </div>
 
               <div class="row ">
+                <hr>
                 <div class="listing-actions">
-                <ul>
-                  <li class="list-group-item"><h3>About:</h3></li>
-                  <li class="list-group-item"><h5><%= @person.description %></h5></li>
-                </ul>
-              </div>
-            </div>
-            <div class="row">
-              <hr>
-              <div class="listing-actions">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                  <ul>
-                  <% if @person.twitter_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " Twitter", "https://twitter.com/#{@person.twitter_url}", class: "fa fa-twitter fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.facebook_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " Facebook", "https://facebook.com/#{@person.facebook_url}", class: "fa fa-facebook fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.linkedin_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " LinkedIn", "https://linkedin.com/in/#{@person.linkedin_url}", class: "fa fa-linkedin fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.instagram_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " Instagram", "https://instagram.com/#{@person.instagram_url}", class: "fa fa-instagram fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.snapchat_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " Snapchat", "https://snapchat.com/add/#{@person.snapchat_url}", class: "fa fa-snapchat fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.youtube_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " YouTube", "https://youtube.com/user/#{@person.youtube_url}", class: "fa fa-youtube fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.angellist_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " AngelList", "https://angel.co/#{@person.angellist_url}", class: "fa fa-angellist fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.medium_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " Medium", "https://medium.com/#{@person.medium_url}", class: "fa fa-medium fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.producthunt_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " ProductHunt", "https://producthunt.com/#{@person.producthunt_url}", class: "fa fa-producthunt fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.reddit_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " Reddit", "https://reddit.com/#{@person.reddit_url}", class: "fa fa-reddit fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  <% if @person.twitch_url != "" %><li class="list-group-item">
-                      <i class="icons-paddings"><%= link_to " Twitch", "https://twitch.com/#{@person.twitch_url}", class: "fa fa-twitch fa-2x",  :target => '_blank' %></span>
-                    </i></li><% end %>
-                  </ul>
+
+                    <li class="list-group-item"><h3><small>About:</small></h3></li>
+                    <li class="list-group-item"><p><%= @person.description %></p></li>
+
                 </div>
-            </div>
-          </div>
-
-
+              </div>
+              <div class="row ">
+                <hr>
+                  <div class="listing-actions">
+                    <li class="list-group-item"><h3><small>Social links:</small></h3></li>
+                </div>
+              </div>
           <div class="row">
-            <hr>
             <div class="listing-actions">
               <div class="col-sm-12 col-md-12 col-lg-12">
-                <ul>
+
+
                 <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
                   <% if @person.twitter_url != "" %><li class="list-group-item">
                       <i class="icons-paddings"><%= link_to "", "https://twitter.com/#{@person.twitter_url}", class: "fa fa-twitter fa-2x",  :target => '_blank' %></span>
@@ -124,7 +89,7 @@
                 </div>
                 <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
                 <% if @person.producthunt_url != "" %><li class="list-group-item">
-                    <i class="icons-paddings"><%= link_to "PH", "https://producthunt.com/#{@person.producthunt_url}", class: "fa fa-producthunt fa-2x",  :target => '_blank' %></span>
+                    <i class="icons-paddings"><%= link_to "", "https://producthunt.com/#{@person.producthunt_url}", class: "fa fa-product-hunt fa-2x",  :target => '_blank' %></span>
                   </i></li><% end %>
                 </div>
                 <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
@@ -137,7 +102,7 @@
                     <i class="icons-paddings"><%= link_to "", "https://twitch.com/#{@person.twitch_url}", class: "fa fa-twitch fa-2x",  :target => '_blank' %></span>
                   </i></li><% end %>
                 </div>
-                </ul>
+
               </div>
           </div>
         </div>
@@ -173,7 +138,8 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h2>Comments</h2>
-              <h3><small>Here you can write something about this person, your thoughts and findings. Also you can suggest other links to this person around the web.</small></h3>
+              <h3><small>Here you can write something about this person, your thoughts and findings.<br>
+                 Also you can suggest other links to this person around the web.</small></h3>
             </div>
           <div class="panel-body">
             <h5 class="comments_title">
