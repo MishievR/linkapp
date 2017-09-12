@@ -46,8 +46,9 @@
                     <div class="well well-white">
                       <li class="article-title">
                           <h4 class="group-title">
-                          <%= link_to "#{category_groups.title}", group_path(category_groups), class:"group-title" %>
+                          <%= link_to "#{category_groups.title}", group_path(category_groups), class:"group-title" %> <small>by <%= category_groups.user.name %></small>
                           </h4>
+                          <h4><small><%= category_groups.people.count %> people in this group</small></h4>
                           <h4><hr>
                           <small>
                           <%= truncate(category_groups.description, length: 100) %>
