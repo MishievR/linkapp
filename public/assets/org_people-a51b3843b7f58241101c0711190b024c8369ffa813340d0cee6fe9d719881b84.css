@@ -1,0 +1,124 @@
+/* line 9, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.profilePhoto {
+  width: 150px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
+  height: 150px;
+  border-radius: 75px;
+  cursor: pointer;
+}
+
+/* line 19, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+div.photoPreview {
+  border: 1px solid #B4B4B4;
+  width: 150px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  height: 150px;
+  border-radius: 75px;
+  cursor: pointer;
+  background-repeat: no repeat;
+  background-position: center;
+  background-size: 100% 100% !important;
+  text-align: center;
+}
+/* line 31, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+div.photoPreview .photoUpload {
+  font-size: 32px;
+  margin-top: 35px;
+  color: #B4B4B4;
+}
+/* line 36, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+div.photoPreview .fa {
+  display: inline-block;
+  text-rendering: auto;
+}
+/* line 40, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+div.photoPreview p {
+  color: #B4B4B4;
+  font-size: 16px;
+}
+
+/* line 45, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+input#uploadAvatar {
+  display: none;
+}
+
+/* line 48, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+p.deletePhoto {
+  color: #DA7364;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* line 55, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.register_error, .shared_links, .signin_remember_me {
+  margin-bottom: 10px;
+}
+
+/* line 60, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.payment_settings center p {
+  margin: 0;
+}
+
+/* line 65, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.tos {
+  font-weight: normal;
+}
+
+/* line 69, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.account-status table {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 73, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.account-status table .label {
+  background: transparent;
+  font-weight: normal;
+  font-size: 14px;
+}
+/* line 79, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.account-status table .label-primary {
+  color: #00c38b;
+}
+/* line 80, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.account-status table .label-danger {
+  color: #d9625a;
+}
+
+/* line 83, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.list-group {
+  margin-bottom: 10px;
+}
+
+/* line 86, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.list-group:last-child {
+  margin-bottom: 0;
+}
+
+/* line 89, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.list-group-item {
+  border-color: #EEE;
+}
+/* line 91, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.list-group-item h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+/* line 95, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.list-group-item .form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* line 98, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.dob select {
+  width: auto;
+  display: inline;
+}
+
+/* line 103, /Users/Roman/Documents/OverLink/overlink_app/vendor/assets/stylesheets/org_people.css.scss */
+.stripe-save-info {
+  margin: 20px 0 50px 0;
+}
