@@ -69,11 +69,11 @@ hr.zero-margin {
 
 #show-listing-body {
   // background-color: #E9EBEE;
-  background: #000e25; /* For browsers that do not support gradients */
-  background: -webkit-radial-gradient(#011A3B, #000e25); /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(#011A3B, #000e25); /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(#011A3B, #000e25); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(#011A3B, #000e25); /* Standard syntax */
+  background: #fefefe; /* For browsers that do not support gradients */
+  // background: -webkit-radial-gradient(#011A3B, #000e25); /* Safari 5.1 to 6.0 */
+  // background: -o-radial-gradient(#011A3B, #000e25); /* For Opera 11.6 to 12.0 */
+  // background: -moz-radial-gradient(#011A3B, #000e25); /* For Firefox 3.6 to 15 */
+  // background: radial-gradient(#011A3B, #000e25); /* Standard syntax */
   // background-image: linear-gradient(to top, #F1F7FF 0%, #F9FCFF 100%);
   bottom: 0px;
   // position: inherit;
@@ -126,13 +126,13 @@ hr.zero-margin {
   background-color: #E62F24;
 }
 
-.btn-primary{
-  background-color: #2165ae;
-}
-
-.btn-lg {
-  border-radius: 0px;
-}
+// .btn-primary{
+//   background-color: #2165ae;
+// }
+//
+// .btn-lg {
+//   border-radius: 0px;
+// }
 
 .form-control {
   border-radius: 0px;
@@ -142,10 +142,75 @@ hr.zero-margin {
 // ======================================================
 // EDIT BOOTSTRAP NATIVE ELEMENTS   [END]
 // ======================================================
+
+// .navbar-white {
+//   background-color: #000;
+// }
 .h3-category:hover {
   color: #000;
 
 }
+
+
+// BTN OUTLINE
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+    color: #D72020;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+// BTN OUTLINE
+
+.category-main-btn {
+  color: #D72020;
+}
+
+.category-main-btn:hover {
+  color: #fff;
+}
+
+
+
+.text-red-bold {
+  font-weight: bold;
+  color: #D72020;
+}
+
+.text-red {
+  color: #D72020;
+}
+
+.well-top{
+  margin-top: 35px;
+}
+
 .on-black {
   color: #fff;
 }
@@ -274,7 +339,7 @@ hr.zero-margin {
 }
 
 .nav.navbar-nav li a {
-    color: #fff;
+    color: #000;
 }
 
 .nav.navbar-nav li > .dropdown-menu a{

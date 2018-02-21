@@ -1,100 +1,35 @@
 
-    <!-- <div class="container">
-      <div class="row">
+      <div class="container">
+        <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="well well-intro">
-              <h1 class="center blue-intro">YELLOW PAGES OF SOCIAL NETWORKS.</h1>
-              <h4 class="center">With OverLink you can find interesting people to follow on any social network they use to reach your dream.</h4>
-            </div>
+              <h1 class="display-1 text-red-bold">Explore</h1>
           </div>
         </div>
-      </div> -->
+      </div>
 
       <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <div class="well well-white">
-                <h2 class="center ">Find interesting people around any social network</h2>
-                <!-- <h2 class="center ">Crowdsorsed list of ineresting people around any social networks</h2> -->
-                <!-- <h4 class="center"></h4> -->
-<br>
-<hr>
-                <h2 class="center">How it works.</h2>
-                <!-- <h5 class="center">With OverLink you can find interesting people to follow on any social network they use to reach your dream.</h5> -->
-
-
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                        <h3 class="center">Sign Up</h3>
-                        <h4 class="center"><small>Create your Overlink account to be able to add people and create groups.</small></h4>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                        <h3 class="center">Create</h3>
-                        <h4 class="center"><small>You can create peoples accounts and add it to your groups in any of avalible categories.</small></h4>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                        <h3 class="center">Discover</h3>
-                        <h4 class="center"><small>Browse through categories, groups and people and find some amazing people to follow on.</small></h4>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <h4 class="center"><small>or browse thru <%= link_to "categories", categories_path %> and find amazing <%= link_to "people", people_path %>!</small></h4>
-                      </div>
-
-                    </div>
-
-
-              </div>
-            </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h1 class="display-2 text-red">
+              Cities
+              <br>
+              <small class="text-muted">A place where are you starting.</small>
+            </h1>
           </div>
-
-
-
-
         </div>
 
-        <div class="container">
-          <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="well well-intro">
-                  <h1 class="center">Categories.</h1>
-                  <h4 class="center"><small>Discover them all.</small></h4>
-
-
-<ul class="listing">
-  <div class="row">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <ul class="listing">
+              <div class="container-fluid">
+                <div class="row">
                   <% @categories.each do |category| %>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                      <div class="well well-hover">
-                        <li class="article-title">
-                            <h3 class="color-red">
-                            <%= link_to "#{category.name}", category_path(category) %>
-                            </h3>
-                            <h4><small>
-                              <%= truncate(category.description, length: 100) %>
-                            </small></h4>
-                        </li>
-                      </div>
+                    <div class="btn btn-danger btn-outline btn-lg">
+                      <%= link_to "#{category.name}", category_path(category), :class => "btn category-main-btn" %>
                     </div>
                   <% end %>
-                    </ul>
-                  </div>
-
-
-
-
-
                 </div>
               </div>
-            </div>
-          </div>
-
-
-
-        <div class="container">
-
-
+            </ul>
           </div>
         </div>
